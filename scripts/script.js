@@ -31,10 +31,10 @@ function mostrarInventario() {
 
 }
 function guardardatos() {
-    nombre = document.getElementById("nombre").value;
+    nombre = document.getElementById("nombre").value;//para recoger el valor del input tengo que hacerlo con .value
     cantidad = document.getElementById("cantidad").value;
     precio = document.getElementById("precio").value;
-    id = inventario.length + 1;
+    id = inventario.length + 1; // para sacar el nuevo id 
 
     fila = new Array();
 

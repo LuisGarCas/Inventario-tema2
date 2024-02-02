@@ -6,7 +6,11 @@
 body {
     font-family: 'salsa';
     background-color: #f0f0f0;
-   /* text-align: center;*/
+    background-image: url(../assets/R.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
 
 }
 
@@ -20,51 +24,84 @@ body {
     box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.2);
 
 }
+@keyframes slideInFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideInFromRight {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
 
-input [type="text"] {
-   
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    input [type="text"] {
 
-}
-.divLabel{
-    float: left;
-    width: 30%;
-    text-align: right;
-    margin-bottom: 15px;
-}
-.divInput{
-   width:65%;
-    float:right;
-    text-align: left;
-    margin-bottom: 15px;
-   /* padding-left: 5px;*/
-}
-.divBotones{
-    clear:both;
-    margin-top: 10px;
-    text-align: center;
-}
-.divsInputs{
-    margin-bottom: 15px;
-    height: 80%;
-}
+        border: 1px solid #ccc;
+        border-radius: 5px;
 
-   
-:focus {
-    outline: solid 2px;
-}
+    }
 
-.boton {
-    background-color: rgba(239, 212, 236, 0.2);
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    border: 1px solid black;
+    .divLabel {
+        float: left;
+        width: 30%;
+        text-align: right;
+        margin-bottom: 15px;
+    }
 
-}
+    .divInput {
+        width: 65%;
+        float: right;
+        text-align: left;
+        margin-bottom: 15px;
+        /* padding-left: 5px;*/
+    }
 
-#nombre {
-    color: rgba(239, 212, 236, 0.2);
-}
+    .divBotones {
+        clear: both;
+        margin-top: 10px;
+        text-align: center;
+        animation: slideInFromRight 1s ease-in-out;  /* segundo keyframe*/
+    }
+
+    .divsInputs {
+        margin-bottom: 15px;
+        height: 80%;
+        animation: slideInFromLeft 1s ease-in-out;   /*añadimos keyframes */
+    }
+
+    body ::first-line {
+        /*utilizo el pseudoelemento first-line*/
+        color: black;
+        text-decoration: underline;
+    }
+
+    div :focus {
+        /*pseudoclase focus*/
+        color: hotpink;
+    }
+
+
+    .boton {
+        background-color: rgba(239, 212, 236, 0.2);
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        border: 1px solid black;
+
+    }
+
+    #nombre {
+        color: rgba(239, 212, 236, 0.2);
+    }
